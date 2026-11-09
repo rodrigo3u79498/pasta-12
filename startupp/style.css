@@ -1,0 +1,764 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topo {
+    height: 75px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    border-bottom: 1px solid #e8ebf0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    color: #4f46e5;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    color: #596174;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #4f46e5;
+}
+
+.btn-menu {
+    background: #4f46e5;
+    color: white !important;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 80px 10%;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #e5e7ff,
+            transparent 40%
+        );
+}
+
+.hero-texto {
+    max-width: 620px;
+}
+
+.tag {
+    color: #4f46e5;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.08;
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: #4f46e5;
+}
+
+.hero p {
+    color: #687083;
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.btn-principal {
+    background: #4f46e5;
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    background: #4338ca;
+}
+
+.btn-secundario {
+    background: white;
+    color: #4f46e5;
+
+    border: 1px solid #dddff0;
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+    width: 370px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px rgba(40, 45, 70, 0.12);
+}
+
+.mini-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #f8f9ff;
+
+    border-radius: 14px;
+
+    margin-bottom: 15px;
+}
+
+.mini-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9e7ff;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.mini-card p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #777f91;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+    padding: 90px 10%;
+    background: white;
+}
+
+.section-titulo {
+    text-align: center;
+    max-width: 650px;
+
+    margin: auto auto 50px;
+}
+
+.section-titulo span {
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.section-titulo h2 {
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.section-titulo p {
+    color: #747b8d;
+    line-height: 1.6;
+}
+
+.beneficios {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.beneficio {
+    padding: 28px;
+
+    border: 1px solid #eaecf2;
+
+    border-radius: 15px;
+
+    transition: 0.2s;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(30, 35, 60, 0.08);
+}
+
+.icone {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.beneficio h3 {
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    color: #737b8d;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.cta .btn-principal {
+    background: white;
+    color: #4f46e5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111827;
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer p {
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .topo {
+        padding: 0 5%;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .menu a:not(.btn-menu) {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   LOGIN E CADASTRO
+========================= */
+
+.auth-container {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(20, 30, 60, 0.10);
+}
+
+.auth-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eeeeff;
+
+    border-radius: 15px;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.auth-card h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.auth-card > p {
+    color: #737b8d;
+    margin-bottom: 30px;
+}
+
+.auth-card label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.auth-card input {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 8px;
+
+    border: 1px solid #dfe2ea;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.auth-card input:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+.btn-auth {
+    width: 100%;
+
+    border: none;
+
+    background: #4f46e5;
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background: #4338ca;
+}
+
+#mensagem {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.auth-link {
+    text-align: center;
+
+    margin-top: 25px !important;
+
+    margin-bottom: 0 !important;
+}
+
+.auth-link a {
+    color: #4f46e5;
+    font-weight: bold;
+}
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 60px 30px;
+}
+
+.dashboard-topo {
+    margin-bottom: 35px;
+}
+
+.dashboard-topo h1 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.dashboard-topo h1 span {
+    color: #4f46e5;
+}
+
+.dashboard-topo p {
+    color: #737b8d;
+}
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(30, 35, 60, 0.06);
+}
+
+.dashboard-card h2 {
+    margin-bottom: 20px;
+}
+
+.dashboard-card > p {
+    color: #737b8d;
+    margin-bottom: 20px;
+}
+
+
+/* TAREFAS */
+
+.tarefa-input {
+    display: flex;
+    gap: 10px;
+}
+
+.tarefa-input input {
+    flex: 1;
+
+    padding: 13px;
+
+    border: 1px solid #dddfe8;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.tarefa-input button {
+    width: 48px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+#listaTarefas {
+    list-style: none;
+
+    margin-top: 20px;
+}
+
+#listaTarefas li {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px;
+
+    border-bottom: 1px solid #eee;
+}
+
+#listaTarefas li span {
+    cursor: pointer;
+}
+
+#listaTarefas li button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.concluida {
+    text-decoration: line-through;
+
+    color: #999;
+}
+
+
+/* META */
+
+.dashboard-card input[type="number"] {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #dddfe8;
+
+    border-radius: 8px;
+
+    margin-bottom: 12px;
+}
+
+.meta-info {
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+.meta-info strong {
+    display: block;
+
+    font-size: 40px;
+
+    color: #4f46e5;
+}
+
+.meta-info span {
+    color: #737b8d;
+}
+
+
+/* POMODORO */
+
+.timer {
+    text-align: center;
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    color: #4f46e5;
+
+    margin: 30px 0;
+}
+
+.timer-reset {
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+/* ESTATÍSTICAS */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.stats div {
+    text-align: center;
+
+    background: #f6f7ff;
+
+    padding: 20px;
+
+    border-radius: 12px;
+}
+
+.stats strong {
+    display: block;
+
+    font-size: 28px;
+
+    color: #4f46e5;
+}
+
+.stats span {
+    font-size: 13px;
+
+    color: #737b8d;
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+}

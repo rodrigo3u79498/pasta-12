@@ -1,0 +1,595 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Startup</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+        }
+
+        .topo {
+            height: 70px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #111827;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .btn-menu {
+            color: #fff;
+            text-decoration: none;
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-menu:hover {
+            background: #1d4ed8;
+        }
+
+        .auth-container {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 450px;
+            background: #fff;
+            color: #1e293b;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .auth-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #dbeafe;
+            border-radius: 50%;
+            font-size: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .descricao {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 45px 13px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .mostrar {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .forca {
+            height: 6px;
+            margin-top: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #barraForca {
+            width: 0%;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        #textoForca {
+            display: block;
+            font-size: 12px;
+            margin-top: 5px;
+            color: #64748b;
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-auth:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        #mensagem {
+            text-align: center;
+            margin-top: 18px;
+            font-weight: bold;
+            min-height: 20px;
+        }
+
+        .sucesso {
+            color: #16a34a;
+        }
+
+        .erro {
+            color: #dc2626;
+        }
+
+        .auth-link {
+            text-align: center;
+            margin-top: 22px;
+            color: #64748b;
+        }
+
+        .auth-link a {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            .auth-card {
+                padding: 25px 20px;
+            }
+
+            .topo {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <a href="../index.html" class="logo">
+            🚀 <strong>Startup</strong>
+        </a>
+
+        <a href="login.html" class="btn-menu">
+            Entrar
+        </a>
+
+    </header>
+
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <div class="auth-icon">
+                🚀
+            </div>
+
+            <h1>Crie sua conta</h1>
+
+            <p class="descricao">
+                Organize seus estudos e acompanhe seu progresso.
+            </p>
+
+
+            <form id="cadastroForm">
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seuemail@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="mostrar"
+                            onclick="mostrarSenha('senha', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <div class="forca">
+                        <div id="barraForca"></div>
+                    </div>
+
+                    <span id="textoForca">
+                        Digite uma senha
+                    </span>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="confirmarSenha">
+                        Confirmar senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            placeholder="Digite a senha novamente"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="mostrar"
+                            onclick="mostrarSenha('confirmarSenha', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-auth"
+                >
+                    Criar minha conta 🚀
+                </button>
+
+            </form>
+
+
+            <div id="mensagem"></div>
+
+
+            <p class="auth-link">
+                Já possui uma conta?
+                <a href="login.html">
+                    Entrar
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const form = document.getElementById("cadastroForm");
+
+        const senha = document.getElementById("senha");
+
+        const barra = document.getElementById("barraForca");
+
+        const textoForca = document.getElementById("textoForca");
+
+
+        // =========================
+        // MOSTRAR / OCULTAR SENHA
+        // =========================
+
+        function mostrarSenha(id, botao) {
+
+            const campo = document.getElementById(id);
+
+            if (campo.type === "password") {
+
+                campo.type = "text";
+                botao.textContent = "🙈";
+
+            } else {
+
+                campo.type = "password";
+                botao.textContent = "👁️";
+
+            }
+        }
+
+
+        // =========================
+        // FORÇA DA SENHA
+        // =========================
+
+        senha.addEventListener("input", function () {
+
+            const valor = senha.value;
+
+            let pontos = 0;
+
+            if (valor.length >= 6) {
+                pontos++;
+            }
+
+            if (valor.length >= 10) {
+                pontos++;
+            }
+
+            if (/[A-Z]/.test(valor)) {
+                pontos++;
+            }
+
+            if (/[0-9]/.test(valor)) {
+                pontos++;
+            }
+
+            if (/[^A-Za-z0-9]/.test(valor)) {
+                pontos++;
+            }
+
+
+            if (valor.length === 0) {
+
+                barra.style.width = "0%";
+                textoForca.textContent = "Digite uma senha";
+
+            } else if (pontos <= 2) {
+
+                barra.style.width = "35%";
+                textoForca.textContent = "Senha fraca";
+
+            } else if (pontos <= 4) {
+
+                barra.style.width = "70%";
+                textoForca.textContent = "Senha média";
+
+            } else {
+
+                barra.style.width = "100%";
+                textoForca.textContent = "Senha forte";
+            }
+
+        });
+
+
+        // =========================
+        // CADASTRO
+        // =========================
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                document.getElementById("nome").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim().toLowerCase();
+
+            const senhaValor =
+                document.getElementById("senha").value;
+
+            const confirmar =
+                document.getElementById("confirmarSenha").value;
+
+            const mensagem =
+                document.getElementById("mensagem");
+
+
+            mensagem.className = "";
+
+
+            // Verificar senha
+
+            if (senhaValor.length < 6) {
+
+                mensagem.className = "erro";
+
+                mensagem.textContent =
+                    "❌ A senha precisa ter pelo menos 6 caracteres.";
+
+                return;
+            }
+
+
+            // Confirmar senha
+
+            if (senhaValor !== confirmar) {
+
+                mensagem.className = "erro";
+
+                mensagem.textContent =
+                    "❌ As senhas não são iguais.";
+
+                return;
+            }
+
+
+            // Buscar usuários existentes
+
+            const usuarios =
+                JSON.parse(
+                    localStorage.getItem("usuarios") || "[]"
+                );
+
+
+            // Verificar email
+
+            const emailExiste =
+                usuarios.some(
+                    usuario => usuario.email === email
+                );
+
+
+            if (emailExiste) {
+
+                mensagem.className = "erro";
+
+                mensagem.textContent =
+                    "❌ Este e-mail já está cadastrado.";
+
+                return;
+            }
+
+
+            // Criar usuário
+
+            const novoUsuario = {
+
+                id: Date.now(),
+
+                nome: nome,
+
+                email: email,
+
+                senha: senhaValor
+
+            };
+
+
+            usuarios.push(novoUsuario);
+
+
+            localStorage.setItem(
+                "usuarios",
+                JSON.stringify(usuarios)
+            );
+
+
+            // Mensagem
+
+            mensagem.className = "sucesso";
+
+            mensagem.textContent =
+                "✅ Cadastro realizado com sucesso!";
+
+
+            // Limpar formulário
+
+            form.reset();
+
+            barra.style.width = "0%";
+
+            textoForca.textContent =
+                "Digite uma senha";
+
+
+            // Ir para login
+
+            setTimeout(function () {
+
+                window.location.href = "login.html";
+
+            }, 1500);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Startup - Organizador de Estudos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Startup</h1>
+    <p>Transformando organização em resultados</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📚 Sobre o App</h2>
+        <p>
+            O Startup ajuda estudantes a organizarem tarefas,
+            criarem metas e manterem a consistência nos estudos.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>✅ Minhas Tarefas</h2>
+
+        <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+
+        <button onclick="adicionarTarefa()">Adicionar</button>
+
+        <ul id="lista"></ul>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Meta de Estudos</h2>
+
+        <input
+            type="number"
+            id="meta"
+            placeholder="Meta de horas"
+            min="1"
+        >
+
+        <button onclick="salvarMeta()">Salvar Meta</button>
+
+        <br><br>
+
+        <div class="progress">
+            <div class="progress-bar" id="barra">0%</div>
+        </div>
+
+        <br>
+
+        <button onclick="aumentarProgresso()">
+            +1 Hora Estudada
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>⏱️ Pomodoro</h2>
+
+        <div id="timer">25:00</div>
+
+        <button onclick="iniciarPomodoro()">
+            Iniciar
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>📊 Estatísticas</h2>
+
+        <p>
+            Tarefas Criadas:
+            <span id="totalTarefas">0</span>
+        </p>
+
+        <p>
+            Horas Estudadas:
+            <span id="horas">0</span>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

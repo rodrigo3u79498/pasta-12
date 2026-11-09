@@ -1,0 +1,558 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Startup</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        /* =========================
+           TOPO
+        ========================= */
+
+        .topo {
+            height: 70px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #111827;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .btn-menu {
+            color: white;
+            text-decoration: none;
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-menu:hover {
+            background: #1d4ed8;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .login-container {
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 15px;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .login-card {
+            width: 100%;
+            max-width: 430px;
+
+            background: white;
+            color: #1e293b;
+
+            padding: 38px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        /* =========================
+           ÍCONE
+        ========================= */
+
+        .login-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #dbeafe;
+
+            border-radius: 50%;
+
+            font-size: 32px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .descricao {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 28px;
+        }
+
+        /* =========================
+           CAMPOS
+        ========================= */
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        .campo label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 14px 45px 14px 14px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        /* =========================
+           BOTÃO MOSTRAR SENHA
+        ========================= */
+
+        .mostrar {
+            position: absolute;
+
+            right: 12px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        /* =========================
+           BOTÃO LOGIN
+        ========================= */
+
+        .btn-login {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           MENSAGEM
+        ========================= */
+
+        #mensagem {
+            min-height: 22px;
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            font-weight: bold;
+        }
+
+        .erro {
+            color: #dc2626;
+        }
+
+        .sucesso {
+            color: #16a34a;
+        }
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        .cadastro-link {
+            text-align: center;
+
+            margin-top: 24px;
+
+            color: #64748b;
+        }
+
+        .cadastro-link a {
+            color: #2563eb;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+        .cadastro-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .login-card {
+                padding: 28px 20px;
+            }
+
+            .topo {
+                padding: 0 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         TOPO
+    ========================== -->
+
+    <header class="topo">
+
+        <a href="../index.html" class="logo">
+            🚀 <strong>Startup</strong>
+        </a>
+
+        <a href="cadastro.html" class="btn-menu">
+            Criar conta
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <div class="login-icon">
+                🚀
+            </div>
+
+
+            <h1>
+                Bem-vindo de volta!
+            </h1>
+
+
+            <p class="descricao">
+                Entre na sua conta para continuar estudando.
+            </p>
+
+
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seuemail@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="mostrar"
+                            onclick="mostrarSenha()"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Entrar 🚀
+                </button>
+
+            </form>
+
+
+            <!-- MENSAGEM -->
+
+            <div id="mensagem"></div>
+
+
+            <!-- CADASTRO -->
+
+            <p class="cadastro-link">
+
+                Ainda não possui uma conta?
+
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        // =========================
+        // MOSTRAR SENHA
+        // =========================
+
+        function mostrarSenha() {
+
+            const senha =
+                document.getElementById("senha");
+
+            const botao =
+                document.querySelector(".mostrar");
+
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+
+                botao.textContent = "🙈";
+
+            } else {
+
+                senha.type = "password";
+
+                botao.textContent = "👁️";
+
+            }
+
+        }
+
+
+        // =========================
+        // LOGIN
+        // =========================
+
+        const form =
+            document.getElementById("loginForm");
+
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const senha =
+                document
+                    .getElementById("senha")
+                    .value;
+
+
+            const mensagem =
+                document.getElementById("mensagem");
+
+
+            mensagem.className = "";
+
+
+            // =========================
+            // BUSCAR USUÁRIOS
+            // =========================
+
+            const usuarios =
+                JSON.parse(
+                    localStorage.getItem("usuarios") || "[]"
+                );
+
+
+            // =========================
+            // PROCURAR USUÁRIO
+            // =========================
+
+            const usuario =
+                usuarios.find(function(user) {
+
+                    return (
+                        user.email === email &&
+                        user.senha === senha
+                    );
+
+                });
+
+
+            // =========================
+            // LOGIN INCORRETO
+            // =========================
+
+            if (!usuario) {
+
+                mensagem.className = "erro";
+
+                mensagem.textContent =
+                    "❌ E-mail ou senha incorretos.";
+
+                return;
+
+            }
+
+
+            // =========================
+            // SALVAR LOGIN
+            // =========================
+
+            localStorage.setItem(
+                "usuarioLogado",
+                JSON.stringify(usuario)
+            );
+
+
+            // =========================
+            // SUCESSO
+            // =========================
+
+            mensagem.className = "sucesso";
+
+            mensagem.textContent =
+                "✅ Login realizado! Entrando...";
+
+
+            // =========================
+            // DASHBOARD
+            // =========================
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "dashboard.html";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```
